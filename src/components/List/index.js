@@ -27,7 +27,7 @@ const Item = ({ item, showDetail }) => {
           <Col sm={9} className="dien-card-body">
             <Card.Body sm={8}>
               <Card.Text>
-                <h5><b>#{item.number} {item.title}</b></h5>
+                <h5><b>#{item.number} {item.title.length>30?item.title.slice(0,30)+"...":item.title}</b></h5>
                 <h5 className="dien-h5">
                   <i>@{item.user.login} Last update:<Moment fromNow>{new Date(item.updated_at).toString()}</Moment> comments:{item.comments}
                   </i>
